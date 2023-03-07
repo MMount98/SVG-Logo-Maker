@@ -1,4 +1,7 @@
+//Requie In
 const inquirer = require("inquirer");
+const fs = require("fs");
+const shapeCheck = require("./Lib/shapes");
 
 inquirer
   .prompt([
@@ -25,7 +28,7 @@ inquirer
       name: "colorShape",
     },
   ])
-  .then((answers) => {
-    // Use user feedback for... whatever!!
+  .then((data) => {
+    console.log(shapeCheck.shapeRender(data.shape));
   })
   .catch((error) => {});
