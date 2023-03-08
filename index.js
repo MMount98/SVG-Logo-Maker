@@ -30,15 +30,19 @@ inquirer
     },
   ])
   .then((data) => {
+    let newCircle;
+    let newSquare;
+    let newTriangle;
+
     if (data.shape === "circle") {
-      let newCircle = new Circle(data);
-      console.log(newCircle);
+      newCircle = new Circle(data);
     } else if (data.shape === "square") {
-      let newSquare = new Square(data);
+      newSquare = new Square(data);
       console.log(newSquare);
     } else if (data.shape === "triangle") {
-      let newTriangle = new Triangle(data);
+      newTriangle = new Triangle(data);
       console.log(newTriangle);
     }
+    console.log(newCircle);
   })
   .catch((error) => {});
