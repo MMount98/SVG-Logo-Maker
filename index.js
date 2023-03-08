@@ -1,48 +1,44 @@
-//Requie In
 const inquirer = require("inquirer");
-const fs = require("fs");
-const circle = require("./Lib/Circle-constructor.js");
+const Circle = require("./Lib/circle.js");
+const Square = require("./Lib/square.js");
+const Triangle = require("./Lib/triangle.js");
 
 inquirer
   .prompt([
     {
-      type: "type",
-      message: "Please Enter up to three Characters:",
-      name: "title",
+      type: "input",
+      name: "text",
+      message: "Please enter in a title (only 3 characters):",
     },
     {
-      type: "type",
-      message: "Please type in a color (or a hexadecimal number) for the Text:",
-      name: "colorText",
+      type: "input",
+      name: "textColor",
+      message:
+        "Please enter in a color (or a hexadecimal number) for the text:",
     },
     {
       type: "list",
-      message: "Please Select a Shape:",
-      choices: ["circle", "triangle", "square"],
       name: "shape",
+      message: "Which background shape would you like?",
+      choices: ["circle", "square", "triangle"],
     },
     {
-      type: "type",
+      type: "input",
+      name: "bgColor",
       message:
-        "Please type in a color (or a hexadecimal number) for the shape:",
-      name: "colorFill",
+        "Please enter in a color (or a hexadecimal number) for the background color:",
     },
   ])
   .then((data) => {
-    const renderShape = (data) => {
-      switch (data.Shape) {
-        case "circle":
-          return new Circle(data);
-          break;
-        case "triangle":
-          return new Triangle(data);
-          break;
-        case "square":
-          return new Square(data);
-          break;
-        default:
-          throw new Error("Error in Passing Input from Prompt");
-      }
-    };
+    if (data.shape === "circle") {
+      let newCircle = new Circle(data);
+      console.log(newCircle);
+    } else if (data.shape === "square") {
+      let newSquare = new Square(data);
+      console.log(newSquare);
+    } else if (data.shape === "triangle") {
+      let newTriangle = new Triangle(data);
+      console.log(newTriangle);
+    }
   })
   .catch((error) => {});
