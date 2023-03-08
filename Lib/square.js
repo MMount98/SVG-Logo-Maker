@@ -6,7 +6,7 @@ class Square extends Shape {
     this.shape = shape;
   }
   render() {
-    return `<rect width="200" height="200" style="fill:${this.bgColor}"/> `;
+    return `<rect width="200" height="200" fill="${this.bgColor}"/> `;
   }
 }
 
