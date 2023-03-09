@@ -42,6 +42,8 @@ The use of this application is to build a basic SVG logo to start your project o
 
 ![Location of New SVG File](./Lib/Images/logo-exm.png)
 
+[Here is a Walkthough Video](https://drive.google.com/file/d/1gRi_nIF_dcWi90K7VrTGyMhgQv5Alnee/view)
+
 <a name="contribute"></a>
 
 ## Contributing
