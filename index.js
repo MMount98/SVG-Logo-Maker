@@ -33,6 +33,10 @@ inquirer
   .then((data) => {
     let newShape;
 
+    if (data.text.length > 3) {
+      return console.log(`Error: Too Many Characters Used`);
+    }
+
     switch (data.shape) {
       case "circle":
         newShape = new Circle(
@@ -62,12 +66,14 @@ inquirer
         throw Error("Failed to pass shape value to Constructor");
     }
 
-    fs.writeFile("./Examples/logo.svg", newShape.render(), (err) => {
-      if (err) {
+    fs.writeFile("./Examples/logo.svg", newShape.render(), (error) => {
+      if (error) {
         console.log("Ran into Error building Logo.svg");
       } else {
         console.log("Generated logo.svg");
       }
     });
   })
-  .catch((error) => {});
+  .catch((error) => {
+    console.log(error);
+  });
