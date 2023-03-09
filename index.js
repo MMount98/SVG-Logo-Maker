@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const Circle = require("./Lib/circle.js");
 const Square = require("./Lib/square.js");
 const Triangle = require("./Lib/triangle.js");
+const fs = require("fs");
 
 inquirer
   .prompt([
@@ -61,6 +62,12 @@ inquirer
         throw Error("Failed to pass shape value to Constructor");
     }
 
-    console.log(newShape.render());
+    fs.writeFile("./Examples/logo.svg", newShape.render(), (err) => {
+      if (err) {
+        console.log("Ran into Error building Logo.svg");
+      } else {
+        console.log("Generated logo.svg");
+      }
+    });
   })
   .catch((error) => {});
