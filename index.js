@@ -32,28 +32,35 @@ inquirer
   .then((data) => {
     let newShape;
 
-    if (data.shape === "circle") {
-      newShape = new Circle(
-        data.text,
-        data.textColor,
-        data.shape,
-        data.bgColor
-      );
-    } else if (data.shape === "square") {
-      newShape = new Square(
-        data.text,
-        data.textColor,
-        data.shape,
-        data.bgColor
-      );
-    } else if (data.shape === "triangle") {
-      newShape = new Triangle(
-        data.text,
-        data.textColor,
-        data.shape,
-        data.bgColor
-      );
+    switch (data.shape) {
+      case "circle":
+        newShape = new Circle(
+          data.text,
+          data.textColor,
+          data.shape,
+          data.bgColor
+        );
+        break;
+      case "square":
+        newShape = new Square(
+          data.text,
+          data.textColor,
+          data.shape,
+          data.bgColor
+        );
+        break;
+      case "triangle":
+        newShape = new Triangle(
+          data.text,
+          data.textColor,
+          data.shape,
+          data.bgColor
+        );
+        break;
+      default:
+        throw Error("Failed to pass shape value to Constructor");
     }
-    console.log(newShape);
+
+    console.log(newShape.render());
   })
   .catch((error) => {});
