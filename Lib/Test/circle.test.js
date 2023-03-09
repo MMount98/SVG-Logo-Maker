@@ -1,4 +1,4 @@
-const Circle = require("./circle.js");
+const Circle = require("../circle.js");
 
 describe("Circle", () => {
   test("should apply string for SVG circle", () => {

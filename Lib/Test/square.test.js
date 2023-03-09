@@ -1,4 +1,4 @@
-const Square = require("./square.js");
+const Square = require("../square.js");
 
 describe("Square", () => {
   test("should apply string for SVG square", () => {

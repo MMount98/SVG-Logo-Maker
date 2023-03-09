@@ -1,4 +1,4 @@
-const Triangle = require("./triangle.js");
+const Triangle = require("../triangle.js");
 
 describe("Triangle", () => {
   test("should apply string for SVG triangle", () => {
