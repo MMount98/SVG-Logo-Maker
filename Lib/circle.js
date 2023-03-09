@@ -6,7 +6,7 @@ class Circle extends Shape {
     this.shape = shape;
   }
   render() {
-    return `<svg width="200" height="300"><${this.shape} cx="50" cy="50" r="40" fill="${this.bgColor}"/><text x="5" y="65" fill="${this.textColor}" font-size="50">${this.text}</text></svg>`;
+    return `<svg version ="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"><${this.shape} cx="50" cy="50" r="40" fill="${this.bgColor}"/><text x="5" y="65" fill="${this.textColor}" font-size="50">${this.text}</text></svg>`;
   }
 }
 
